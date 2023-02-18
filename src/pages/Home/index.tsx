@@ -82,12 +82,8 @@ const HomePage = () => {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
 
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
+  const handleDrawer = () => {
+    setOpen(!open);
   };
 
   return (
@@ -97,19 +93,22 @@ const HomePage = () => {
       }}
     >
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
+      <AppBar
+        position="fixed"
+        sx={{ backgroundColor: "#182C48", zIndex: "9999" }}
+      >
         <Toolbar>
           <IconButton
             color="inherit"
             aria-label="open drawer"
-            onClick={handleDrawerOpen}
+            onClick={handleDrawer}
             edge="start"
-            sx={{ mr: 2, ...(open && { display: "none" }) }}
+            sx={{ mr: 2 }}
           >
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Tbilisi Masters
+            Tbilisi-Masters
           </Typography>
         </Toolbar>
       </AppBar>
@@ -120,30 +119,36 @@ const HomePage = () => {
           "& .MuiDrawer-paper": {
             width: drawerWidth,
             boxSizing: "border-box",
+            backgroundColor: "#e1e1e1",
           },
         }}
         variant="persistent"
         anchor="left"
         open={open}
       >
-        <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === "ltr" ? (
-              <ChevronLeftIcon />
-            ) : (
-              <ChevronRightIcon />
-            )}
-          </IconButton>
-        </DrawerHeader>
+        <DrawerHeader />
         <Divider />
+        {/* TODO: add path for navigate!! */}
         <List>
           {[
-            { text: "Masters", icon: <EngineeringIcon /> },
-            { text: "Starred", icon: <InboxIcon /> },
-            { text: "Send email", icon: <MailIcon /> },
+            {
+              text: "Masters",
+              icon: <EngineeringIcon />,
+              onClick: () => navigate("/masters"),
+            },
+            {
+              text: "Starred",
+              icon: <InboxIcon />,
+              onClick: () => navigate("/starred"),
+            },
+            {
+              text: "Send email",
+              icon: <MailIcon />,
+              onClick: () => navigate("/email"),
+            },
           ].map((item) => (
-            <ListItem key={item.text} disablePadding>
-              <ListItemButton onClick={() => navigate("/masters")}>
+            <ListItem key={item.text} disablePadding sx={{ color: "#0b0c0c" }}>
+              <ListItemButton onClick={item.onClick}>
                 <ListItemIcon>{item.icon}</ListItemIcon>
                 <ListItemText primary={item.text} />
               </ListItemButton>
@@ -166,16 +171,15 @@ const HomePage = () => {
         </List>
       </Drawer>
       <Main
-        open={open}
         sx={{
           minHeight: "100vh",
-          background: `url(${tbilisiIcon}) no-repeat center center fixed`,
+          backgroundColor: "#182C37",
+          color: "#efc",
         }}
       >
         <DrawerHeader />
         <Typography paragraph>
-          This app is maded for helopeing people find master for any kind of
-          work
+          This app is maded for helping people find master for any kind of work.
         </Typography>
         <Typography paragraph>
           Please help us to be more user friendly, if you have some issues
