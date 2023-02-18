@@ -4,10 +4,7 @@ import { Box } from "@mui/material";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import DmitriiMaster_01 from "images/DmitriiMaster/01.jpg";
-import DmitriiMaster_02 from "images/DmitriiMaster/02.jpg";
 import DmitriiMaster_03 from "images/DmitriiMaster/03.jpg";
-import DmitriiMaster_04 from "images/DmitriiMaster/04.jpg";
-import DmitriiMaster_05 from "images/DmitriiMaster/05.jpg";
 import DmitriiMaster_06 from "images/DmitriiMaster/06.jpg";
 import DmitriiMaster_07 from "images/DmitriiMaster/07.jpg";
 import DmitriiMaster_08 from "images/DmitriiMaster/08.jpg";
@@ -15,10 +12,7 @@ import DmitriiMaster_09 from "images/DmitriiMaster/09.jpg";
 
 const imagesData = [
   { image: DmitriiMaster_01, title: "DmitriiMaster_01" },
-  { image: DmitriiMaster_02, title: "DmitriiMaster_02" },
   { image: DmitriiMaster_03, title: "DmitriiMaster_03" },
-  { image: DmitriiMaster_04, title: "DmitriiMaster_04" },
-  { image: DmitriiMaster_05, title: "DmitriiMaster_05" },
   { image: DmitriiMaster_06, title: "DmitriiMaster_06" },
   { image: DmitriiMaster_07, title: "DmitriiMaster_07" },
   { image: DmitriiMaster_08, title: "DmitriiMaster_08" },
