@@ -86,7 +86,7 @@ const MasterDmitriiPage = () => {
       <ImageList sx={{ maxWidth: 400, minHeight: 320 }} cols={2}>
         {imagesData.map((item) => (
           <ImageListItem key={item.title}>
-            <img src={item.image} alt={item.title} loading="lazy" />
+            <img src={item.image} alt={item.title} />
           </ImageListItem>
         ))}
       </ImageList>
