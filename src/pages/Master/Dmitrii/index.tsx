@@ -52,7 +52,12 @@ const MasterDmitriiPage = () => {
         </Typography>
         <Typography variant="h5">
           Phone number :{" "}
-          <Typography variant="h6" sx={{ fontWeight: "bold" }} display="inline">
+          <Typography
+            variant="h6"
+            sx={{ fontWeight: "bold" }}
+            display="inline"
+            onClick={() => navigator.clipboard.writeText("+995 577 42 31 91")}
+          >
             <Link
               underline="none"
               color="inherit"
@@ -105,7 +110,11 @@ const MasterDmitriiPage = () => {
             justifyContent: "space-evenly",
           }}
         >
-          <Link underline="none" color="inherit" href="https://t.me/Dm163_178">
+          <Link
+            underline="none"
+            color="inherit"
+            href="https://t.me/rem_holod_Tbs"
+          >
             <TelegramIcon />
           </Link>
           <Link
@@ -131,8 +140,7 @@ const MasterDmitriiPage = () => {
             <Link
               underline="none"
               color="inherit"
-              href="tel:+995 577 42 31 91"
-              rel="nofollow"
+              href="https://t.me/Dm163_178"
             >
               Telegram the Master
             </Link>
