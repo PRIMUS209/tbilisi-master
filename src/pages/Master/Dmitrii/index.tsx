@@ -1,6 +1,14 @@
 import { useNavigate } from "react-router";
 
-import { Box, Button, Link, Paper, Typography } from "@mui/material";
+import {
+  Alert,
+  Box,
+  Button,
+  Link,
+  Paper,
+  Typography,
+  Snackbar,
+} from "@mui/material";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 
@@ -13,6 +21,7 @@ import DmitriiMaster_06 from "images/DmitriiMaster/06.jpg";
 import DmitriiMaster_07 from "images/DmitriiMaster/07.jpg";
 import DmitriiMaster_08 from "images/DmitriiMaster/08.jpg";
 import DmitriiMaster_09 from "images/DmitriiMaster/09.jpg";
+import { useEffect, useState } from "react";
 
 const imagesData = [
   { image: DmitriiMaster_06, title: "DmitriiMaster_06" },
@@ -23,6 +32,19 @@ const imagesData = [
 
 const MasterDmitriiPage = () => {
   const navigate = useNavigate();
+  const [successCopied, setSuccessCopied] = useState(false);
+
+  const saveMasterNumber = () => {
+    navigator.clipboard.writeText("+995 577 42 31 91");
+    setSuccessCopied(true);
+  };
+
+  if (successCopied) {
+    setTimeout(() => {
+      setSuccessCopied(false);
+    }, 500);
+  }
+
   return (
     <Box
       sx={{
@@ -45,47 +67,35 @@ const MasterDmitriiPage = () => {
       </Box>
       <Paper sx={{ backgroundColor: "#d2e9f5", textAlign: "left" }}>
         <Typography variant="h6">
-          Name :{" "}
-          <Typography sx={{ fontWeight: "bold" }} display="inline">
-            Dmitrii
-          </Typography>
+          Name : <strong>Dmitrii</strong>
         </Typography>
         <Typography variant="h5">
           Phone number :{" "}
           <Typography
             variant="h6"
-            sx={{ fontWeight: "bold" }}
+            sx={{ fontWeight: "bold", cursor: "pointer" }}
             display="inline"
-            onClick={() => navigator.clipboard.writeText("+995 577 42 31 91")}
+            onClick={saveMasterNumber}
           >
-            <Link
+            {/* <Link
               underline="none"
               color="inherit"
               href="tel: +995 577 42 31 91"
-            >
-              +995 577 42 31 91
-            </Link>
+            > */}
+            +995 577 42 31 91
+            {/* </Link> */}
           </Typography>
         </Typography>
         <Typography variant="h6">
-          In bussiness from{" "}
-          <Typography sx={{ fontWeight: "bold" }} display="inline">
-            2015
-          </Typography>
+          In bussiness from <strong>2015</strong>
         </Typography>
         <Typography variant="h6">
-          Experience{" "}
-          <Typography sx={{ fontWeight: "bold" }} display="inline">
-            8 years
-          </Typography>
+          Experience <strong>8 years</strong>
         </Typography>
         <Typography variant="h6">Professional approach</Typography>
         <Typography variant="h6">
-          Over{" "}
-          <Typography sx={{ fontWeight: "bold" }} display="inline">
-            1000
-          </Typography>{" "}
-          refrigerators and washing machines reanimated
+          Over <strong>1000</strong> refrigerators and washing machines
+          reanimated
         </Typography>
       </Paper>
       <ImageList sx={{ maxWidth: 400, minHeight: 320 }} cols={2}>
@@ -147,6 +157,20 @@ const MasterDmitriiPage = () => {
           </span>
         </Button>
       </Box>
+      {successCopied ? (
+        <Alert
+          sx={{
+            position: "absolute",
+            width: "80%",
+            bottom: "10%",
+            left: "50%",
+            transform: "translate(-50%, 50%)",
+          }}
+          severity="success"
+        >
+          Number copied to your clipboard
+        </Alert>
+      ) : null}
     </Box>
   );
 };
