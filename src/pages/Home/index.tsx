@@ -16,17 +16,13 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import InfoIcon from "@mui/icons-material/Info";
 import TopicIcon from "@mui/icons-material/Topic";
 import EngineeringIcon from "@mui/icons-material/Engineering";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 
-import tbilisiIcon from "images/tbilisi.jpg";
-
-const drawerWidth = 240;
+const drawerWidth = 220;
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })<{
   open?: boolean;
@@ -97,7 +93,10 @@ const HomePage = () => {
         position="fixed"
         sx={{ backgroundColor: "#182C48", zIndex: "9999" }}
       >
-        <Toolbar>
+        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Typography variant="h6" noWrap component="div">
+            Tbilisi-Masters
+          </Typography>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -107,9 +106,6 @@ const HomePage = () => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Tbilisi-Masters
-          </Typography>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -123,7 +119,7 @@ const HomePage = () => {
           },
         }}
         variant="persistent"
-        anchor="left"
+        anchor="right"
         open={open}
       >
         <DrawerHeader />

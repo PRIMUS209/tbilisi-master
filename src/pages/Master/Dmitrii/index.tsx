@@ -1,18 +1,20 @@
-import { Paper } from "@mui/material";
-import { Typography } from "@mui/material";
-import { Box } from "@mui/material";
+import { useNavigate } from "react-router";
+
+import { Box, Button, Link, Paper, Typography } from "@mui/material";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import DmitriiMaster_01 from "images/DmitriiMaster/01.jpg";
-import DmitriiMaster_03 from "images/DmitriiMaster/03.jpg";
+
+import TelegramIcon from "@mui/icons-material/Telegram";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import WestIcon from "@mui/icons-material/West";
+
 import DmitriiMaster_06 from "images/DmitriiMaster/06.jpg";
 import DmitriiMaster_07 from "images/DmitriiMaster/07.jpg";
 import DmitriiMaster_08 from "images/DmitriiMaster/08.jpg";
 import DmitriiMaster_09 from "images/DmitriiMaster/09.jpg";
 
 const imagesData = [
-  { image: DmitriiMaster_01, title: "DmitriiMaster_01" },
-  { image: DmitriiMaster_03, title: "DmitriiMaster_03" },
   { image: DmitriiMaster_06, title: "DmitriiMaster_06" },
   { image: DmitriiMaster_07, title: "DmitriiMaster_07" },
   { image: DmitriiMaster_08, title: "DmitriiMaster_08" },
@@ -20,51 +22,68 @@ const imagesData = [
 ];
 
 const MasterDmitriiPage = () => {
+  const navigate = useNavigate();
   return (
-    <Box sx={{ backgroundColor: "#e7fdec", height: "100%" }}>
-      <Box>
-        <Typography variant="h4">About Master</Typography>
-        <Paper sx={{ backgroundColor: "#d2e9f5" }}>
-          <Typography variant="h6">
-            Name :{" "}
-            <Typography sx={{ fontWeight: "bold" }} display="inline">
-              Dmitrii
-            </Typography>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        textAlign: "center",
+        backgroundColor: "#182C48",
+        height: "100%",
+        color: "#e7ffeb",
+      }}
+    >
+      <Box sx={{ display: "flex", alignItems: "center", position: "relative" }}>
+        <WestIcon
+          sx={{ position: "absolute", left: "12px" }}
+          onClick={() => navigate(-1)}
+        />
+        <Typography variant="h4" sx={{ margin: "0 auto" }}>
+          About Master
+        </Typography>
+      </Box>
+      <Paper sx={{ backgroundColor: "#d2e9f5", textAlign: "left" }}>
+        <Typography variant="h6">
+          Name :{" "}
+          <Typography sx={{ fontWeight: "bold" }} display="inline">
+            Dmitrii
           </Typography>
-          <Typography variant="h5">
-            Phone number :{" "}
-            <Typography
-              variant="h6"
-              sx={{ fontWeight: "bold" }}
-              display="inline"
+        </Typography>
+        <Typography variant="h5">
+          Phone number :{" "}
+          <Typography variant="h6" sx={{ fontWeight: "bold" }} display="inline">
+            <a
+              href="tel: +995 577 42 31 91"
+              style={{ color: "#182c48", textDecoration: "none" }}
             >
               {" "}
-              +995 577 42 31 91
-            </Typography>
+              +995 577 42 31 91{" "}
+            </a>
           </Typography>
-          <Typography variant="h6">
-            In bussiness from{" "}
-            <Typography sx={{ fontWeight: "bold" }} display="inline">
-              2015
-            </Typography>
+        </Typography>
+        <Typography variant="h6">
+          In bussiness from{" "}
+          <Typography sx={{ fontWeight: "bold" }} display="inline">
+            2015
           </Typography>
-          <Typography variant="h6">
-            Experience{" "}
-            <Typography sx={{ fontWeight: "bold" }} display="inline">
-              8 years
-            </Typography>
+        </Typography>
+        <Typography variant="h6">
+          Experience{" "}
+          <Typography sx={{ fontWeight: "bold" }} display="inline">
+            8 years
           </Typography>
-          <Typography variant="h6">Professional approach</Typography>
-          <Typography variant="h6">
-            Over{" "}
-            <Typography sx={{ fontWeight: "bold" }} display="inline">
-              1000
-            </Typography>{" "}
-            refrigerators and washing machines reanimated
-          </Typography>
-        </Paper>
-      </Box>
-      <ImageList sx={{ maxWidth: 400, minHeight: 450 }} cols={3}>
+        </Typography>
+        <Typography variant="h6">Professional approach</Typography>
+        <Typography variant="h6">
+          Over{" "}
+          <Typography sx={{ fontWeight: "bold" }} display="inline">
+            1000
+          </Typography>{" "}
+          refrigerators and washing machines reanimated
+        </Typography>
+      </Paper>
+      <ImageList sx={{ maxWidth: 400, minHeight: 320 }} cols={2}>
         {imagesData.map((item) => (
           <ImageListItem key={item.title}>
             <img src={item.image} alt={item.title} loading="lazy" />
@@ -72,10 +91,50 @@ const MasterDmitriiPage = () => {
         ))}
       </ImageList>
 
-      <Typography variant="h6">
-        {" "}
-        Please contact this master for more info and free consultation
-      </Typography>
+      <Box
+        sx={{
+          alignItems: "center",
+        }}
+      >
+        <Typography variant="h6">Find master on social media</Typography>
+        <Box
+          sx={{
+            display: "flex",
+            width: "100%",
+            flexDirection: "row",
+            justifyContent: "space-evenly",
+          }}
+        >
+          <Link underline="none" color="inherit" href="https://t.me/Dm163_178">
+            <TelegramIcon />
+          </Link>
+          <Link
+            underline="none"
+            color="inherit"
+            href="https://www.instagram.com/dmitri_mastertbs/?igshid=YmMyMTA2M2Y%3D"
+          >
+            <InstagramIcon />
+          </Link>
+          <Link
+            underline="none"
+            color="inherit"
+            href="https://www.facebook.com/RemHolodTBL?mibextid=ZbWKwL"
+          >
+            <FacebookIcon />
+          </Link>
+        </Box>
+        <Button
+          sx={{ width: "88%", height: "52px", margin: "24px 20px" }}
+          variant="contained"
+        >
+          <a
+            href="tel: +995 577 42 31 91"
+            style={{ color: "white", textDecoration: "none" }}
+          >
+            Call Master
+          </a>
+        </Button>
+      </Box>
     </Box>
   );
 };
