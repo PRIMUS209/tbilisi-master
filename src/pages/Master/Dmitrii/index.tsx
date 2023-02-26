@@ -55,6 +55,7 @@ const MasterDmitriiPage = () => {
           <Typography variant="h6" sx={{ fontWeight: "bold" }} display="inline">
             <a
               href="callto: +995 577 42 31 91"
+              data-telegram="telegram"
               style={{ color: "#182c48", textDecoration: "none" }}
             >
               {" "}
@@ -129,6 +130,7 @@ const MasterDmitriiPage = () => {
         >
           <a
             href="callto: +995 577 42 31 91"
+            data-telegram="telegram"
             style={{ color: "white", textDecoration: "none" }}
           >
             Call Master
