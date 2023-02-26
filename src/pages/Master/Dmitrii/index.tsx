@@ -77,13 +77,13 @@ const MasterDmitriiPage = () => {
             display="inline"
             onClick={saveMasterNumber}
           >
-            {/* <Link
+            <Link
               underline="none"
               color="inherit"
               href="tel: +995 577 42 31 91"
-            > */}
-            +995 577 42 31 91
-            {/* </Link> */}
+            >
+              +995 577 42 31 91
+            </Link>
           </Typography>
         </Typography>
         <Typography variant="h6">
