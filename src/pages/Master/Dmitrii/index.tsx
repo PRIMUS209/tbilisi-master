@@ -127,9 +127,16 @@ const MasterDmitriiPage = () => {
           sx={{ width: "88%", height: "52px", margin: "24px 20px" }}
           variant="contained"
         >
-          <Link underline="none" color="inherit" href="tel: +995 577 42 31 91">
-            Call Master
-          </Link>
+          <span itemProp="telephone">
+            <Link
+              underline="none"
+              color="inherit"
+              href="tel:+995 577 42 31 91"
+              rel="nofollow"
+            >
+              Telegram the Master
+            </Link>
+          </span>
         </Button>
       </Box>
     </Box>
