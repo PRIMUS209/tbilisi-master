@@ -54,7 +54,7 @@ const MasterDmitriiPage = () => {
           Phone number :{" "}
           <Typography variant="h6" sx={{ fontWeight: "bold" }} display="inline">
             <a
-              href="tel: +995 577 42 31 91"
+              href="callto: +995 577 42 31 91"
               style={{ color: "#182c48", textDecoration: "none" }}
             >
               {" "}
@@ -128,7 +128,7 @@ const MasterDmitriiPage = () => {
           variant="contained"
         >
           <a
-            href="tel: +995 577 42 31 91"
+            href="callto: +995 577 42 31 91"
             style={{ color: "white", textDecoration: "none" }}
           >
             Call Master
