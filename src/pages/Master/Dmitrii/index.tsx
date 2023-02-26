@@ -42,7 +42,7 @@ const MasterDmitriiPage = () => {
   if (successCopied) {
     setTimeout(() => {
       setSuccessCopied(false);
-    }, 500);
+    }, 1500);
   }
 
   return (
@@ -146,31 +146,17 @@ const MasterDmitriiPage = () => {
           sx={{ width: "88%", height: "52px", margin: "24px 20px" }}
           variant="contained"
         >
-          <span itemProp="telephone">
-            <Link
-              underline="none"
-              color="inherit"
-              href="https://t.me/Dm163_178"
-            >
-              Telegram the Master
-            </Link>
-          </span>
+          <Link underline="none" color="inherit" href="https://t.me/Dm163_178">
+            Telegram the Master
+          </Link>
         </Button>
       </Box>
-      {successCopied ? (
-        <Alert
-          sx={{
-            position: "absolute",
-            width: "80%",
-            bottom: "10%",
-            left: "50%",
-            transform: "translate(-50%, 50%)",
-          }}
-          severity="success"
-        >
-          Number copied to your clipboard
-        </Alert>
-      ) : null}
+      <Snackbar
+        open={successCopied}
+        autoHideDuration={4000}
+        message="Number copied to your clipboard"
+        sx={{ bottom: { xs: 20, sm: 0 } }}
+      />
     </Box>
   );
 };
