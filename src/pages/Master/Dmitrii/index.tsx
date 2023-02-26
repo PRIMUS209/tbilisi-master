@@ -53,14 +53,13 @@ const MasterDmitriiPage = () => {
         <Typography variant="h5">
           Phone number :{" "}
           <Typography variant="h6" sx={{ fontWeight: "bold" }} display="inline">
-            <a
-              href="callto: +995 577 42 31 91"
-              data-telegram="telegram"
-              style={{ color: "#182c48", textDecoration: "none" }}
+            <Link
+              underline="none"
+              color="inherit"
+              href="tel: +995 577 42 31 91"
             >
-              {" "}
-              +995 577 42 31 91{" "}
-            </a>
+              +995 577 42 31 91
+            </Link>
           </Typography>
         </Typography>
         <Typography variant="h6">
@@ -128,13 +127,9 @@ const MasterDmitriiPage = () => {
           sx={{ width: "88%", height: "52px", margin: "24px 20px" }}
           variant="contained"
         >
-          <a
-            href="callto: +995 577 42 31 91"
-            data-telegram="telegram"
-            style={{ color: "white", textDecoration: "none" }}
-          >
+          <Link underline="none" color="inherit" href="tel: +995 577 42 31 91">
             Call Master
-          </a>
+          </Link>
         </Button>
       </Box>
     </Box>
